@@ -1,0 +1,9 @@
+{
+  "secure": false, 
+  "url": "http://localhost:8889/", 
+  "hostname": "localhost", 
+  "pid": 9428, 
+  "base_url": "/", 
+  "notebook_dir": "/Users/amyskerry/Documents/Projects/cragcrunch/deprecated", 
+  "port": 8889
+}

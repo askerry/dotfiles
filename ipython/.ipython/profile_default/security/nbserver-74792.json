@@ -1,0 +1,9 @@
+{
+  "secure": false, 
+  "url": "http://localhost:8890/", 
+  "hostname": "localhost", 
+  "pid": 74792, 
+  "base_url": "/", 
+  "notebook_dir": "/Users/amyskerry/Documents/Projects/pybq", 
+  "port": 8890
+}

@@ -1,0 +1,9 @@
+{
+  "secure": false, 
+  "url": "http://localhost:8890/", 
+  "hostname": "localhost", 
+  "pid": 45482, 
+  "base_url": "/", 
+  "notebook_dir": "/Users/amyskerry/Documents/Projects/aesutil/bigquery", 
+  "port": 8890
+}

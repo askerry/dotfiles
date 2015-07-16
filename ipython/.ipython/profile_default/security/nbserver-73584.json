@@ -1,0 +1,9 @@
+{
+  "secure": false, 
+  "url": "http://localhost:8889/", 
+  "hostname": "localhost", 
+  "pid": 73584, 
+  "base_url": "/", 
+  "notebook_dir": "/Users/amyskerry/Documents/Projects/dad_files", 
+  "port": 8889
+}
