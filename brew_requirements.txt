@@ -7,6 +7,7 @@ brew-cask
 cairo
 cloog
 cmake
+coreutils
 cvs
 docker
 emacs
@@ -18,6 +19,7 @@ gettext
 gfortran
 glib
 gmp
+gnu-sed
 graphviz
 hdf5
 icu4c
@@ -50,6 +52,7 @@ python
 qt
 r
 readline
+rsync
 simpleitk
 sip
 sqlite
@@ -63,3 +66,4 @@ wget
 xz
 zeromq
 zlib
+zsh

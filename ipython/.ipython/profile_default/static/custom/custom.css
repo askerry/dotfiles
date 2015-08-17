@@ -5,3 +5,11 @@ mainly to be overridden in profile/static/custom/custom.css
 
 This will always be an empty file in IPython
 */
+
+.dataframe * {border-color: #c0c0c0 !important;}
+.dataframe th{background: #9ac;}
+.dataframe td{
+    background: #def;
+    text-align: right; 
+    min-width:2em;
+}

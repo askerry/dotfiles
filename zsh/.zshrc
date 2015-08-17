@@ -12,6 +12,9 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 #misc
 export PATH=$PATH:/opt/X11/bin:/usr/local/git/bin:/usr/texbin
 
+#for hdf5
+export HDF5_DIR=/usr/local/Cellar/hdf5/1.8.12
+
 # Path to oh-my-zsh installation.
 export ZSH=/Users/amyskerry/.oh-my-zsh
 
@@ -29,6 +32,8 @@ alias cdproj='cd ~/Documents/Projects'
 alias zshcfg="open ~/.zshrc"
 alias emacscfg="open ~/.emacs"
 alias read="open README.md"
+alias help="open ~/.oh-my-zsh/custom/help.txt"
+#alias to remove a command from history
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
@@ -45,6 +50,7 @@ alias read="open README.md"
 
 ZSH_THEME="simple"
 
+export TERM=xterm-256color
 
 # hyphen-insensitive completion:. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
@@ -57,21 +63,29 @@ export UPDATE_ZSH_DAYS=30
 
 # COMPLETION_WAITING_DOTS="true"
 
-setopt append_history share_history histignorealldups
-setopt extendedglob
+setopt inc_append_history share_history histignorealldups
+#setopt extendedglob
+setopt menu_complete
+
+HISTSIZE=10000000
+SAVEHIST=10000000
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(python cd-gitroot hipchat zsh-snippets zsh-syntax-highlighting zsh-autosuggestions zsh-history-substring-search)
+plugins=(python cd-gitroot hipchat zsh-snippets zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 autoload -Uz cd-gitroot
 alias cdg='cd-gitroot'
 
 # Enable autosuggestions automatically.
-zle-line-init() {
-    zle autosuggest-start
-}
-zle -N zle-line-init
+ # zle-line-init() {
+ #     zle autosuggest-start
+ # }
+ # zle -N zle-line-init
+ # export AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
+ # export AUTOSUGGESTION_HIGHLIGHT_COLOR="fg=cyan"
+ 
+bindkey '^R' history-incremental-pattern-search-backward
 
 # User configuration
 export PATH="/usr/local/mysql/bin:/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin"
@@ -88,3 +102,7 @@ if [[ -n $SSH_CONNECTION ]]; then
 # ssh
  export SSH_KEY_PATH="~/.ssh/id_rsa"
 
+
+
+#function kill_port() { lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9 }
+#function kill_by_name() { lsof -i| grep $1| awk '{print $2}' | xargs kill -9 }

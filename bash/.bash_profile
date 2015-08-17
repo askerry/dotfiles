@@ -41,7 +41,7 @@ source /Users/amyskerry/.iterm2_shell_integration.bash
 
 # alias rm='mv --target-directory ~/.Trash'
 
-alias mysql='mysql -u root -pamyeskerry88'
+alias mysql='mysql -u root -p'
 
 alias cdproj='cd ~/Documents/Projects'
 

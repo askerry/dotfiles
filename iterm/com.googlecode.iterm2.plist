@@ -185,11 +185,11 @@
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
 	<key>NSWindow Frame Preferences</key>
-	<string>43 200 924 485 0 0 1440 878 </string>
+	<string>161 304 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>152 402 795 451 0 0 1440 878 </string>
+	<string>31 83 795 451 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>444 385 795 473 0 0 1440 878 </string>
+	<string>444 402 795 451 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>367 427 795 451 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -932,7 +932,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>455892920.24488401</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>458743277.55701202</real>
+	<real>461457675.78367698</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -997,7 +997,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-07-16T10:04:43Z</date>
+	<date>2015-08-16T14:33:32Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>ShowBookmarkName</key>
