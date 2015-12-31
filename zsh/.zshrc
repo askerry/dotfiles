@@ -1,52 +1,64 @@
-echo "loading profile from /Users/amyskerry/.zshrc"
+echo "loading profile from /Users/amy/.zshrc"
 
 export PATH=/usr/local/bin:$PATH
 
 #put homebrew installed python installation on path
-export PATH=/usr/local/share/python:$PATH
+#export PATH=/usr/local/share/python:$PATH
 
 #to make mysql work
-export PATH=/usr/local/mysql/bin:$PATH
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
+#export PATH=/usr/local/mysql/bin:$PATH
+#export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 
 #misc
 export PATH=$PATH:/opt/X11/bin:/usr/local/git/bin:/usr/texbin
 
 #for hdf5
-export HDF5_DIR=/usr/local/Cellar/hdf5/1.8.12
+#export HDF5_DIR=/usr/local/Cellar/hdf5/1.8.12
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home
 
 # Path to oh-my-zsh installation.
-export ZSH=/Users/amyskerry/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 #set python path
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-echo python $PYTHONPATH
+export PYTHONPATH=/Library/Python/2.7/site-packages
+#echo python $PYTHONPATH
 
 #matlab path
 export matlabpath=/Applications/MATLAB_R2013b.app/bin/matlab
 
+#set iterm2 profile
+it2prof() { echo -e "\033]50;SetProfile=$1\a" }
+
 # Note:for a full list of active aliases, run `alias`.
 # alias rm='mv --target-directory ~/.Trash'
 alias mysql='mysql -u root -p'
-alias cdproj='cd ~/Documents/Projects'
+alias awsnb="ssh -i /Users/amy/khan/jupyterhub_bq/aws_secret.pem ec2-user@52.8.54.254"
+alias awsnbsftp="sftp -o StrictHostKeyChecking=no -i /Users/amy/khan/jupyterhub_bq/aws_secret.pem ec2-user@52.8.54.254"
+alias pandas="cd ~/khan/pandas; source ~/.virtualenv/pandas/bin/activate; gcloud config configurations activate default"
+alias web="cd ~/khan/webapp; source ~/.virtualenv/khan27/bin/activate; gcloud config configurations activate default"
+alias cqt="cd ~/khan/datasci/cheery-query-theory/amy; source ~/.virtualenv/dataenv/bin/activate; gcloud config configurations activate default"
+alias ap="cd ~/khan/datasci/analytics-private/amy; source ~/.virtualenv/dataenv/bin/activate; gcloud config configurations activate default"
+alias ds="cd ~/khan/datasci; source ~/.virtualenv/dataenv/bin/activate; gcloud config configurations activate default"
+alias thoth="cd ~/personal/thoth; source ~/.virtualenv/misc/bin/activate; gcloud config configurations activate thoth"
+alias bqenv="cd ~/khan/bq; source ~/.virtualenv/bigquery_env/bin/activate"
+alias misc="cd ~/khan/misc; source ~/.virtualenv/misc/bin/activate"
+alias py3="source ~/.virtualenv/py3/bin/activate"
+alias sp='cd $VIRTUAL_ENV/lib/python2.7/site-packages'
 alias zshcfg="open ~/.zshrc"
 alias emacscfg="open ~/.emacs"
+alias dockerup='bash -c "clear && DOCKER_HOST=tcp://192.168.99.100:2376 DOCKER_CERT_PATH=/Users/amy/.docker/machine/machines/default DOCKER_TLS_VERIFY=1 /bin/zsh"'
+alias dockershow="echo docker hosting on 192.168.99.100:2376"
+alias 'nb'='ipython notebook'
 alias read="open README.md"
-alias help="open ~/.oh-my-zsh/custom/help.txt"
+alias cdiff="cdiff -s; it2prof diff"
+alias sshtoby="ssh -i $HOME/.ssh/internal-webserver-key ubuntu@toby.khanacademy.org"
+alias sftptoby='sftp -o "IdentityFile=$HOME/.ssh/internal-webserver-key" ubuntu@toby.khanacademy.org'
+
+gito () { git diff --name-only $1 | xargs open }
+
 #alias to remove a command from history
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-
-# updates path for the Google Cloud SDK.
-#source '/Users/amyskerry/google-cloud-sdk/path.bash.inc'
-#export SDKROOT='/Users/amyskerry/google-cloud-sdk'
-
-#enables bash completion for gcloud.
-#source '/Users/amyskerry/google-cloud-sdk/completion.bash.inc'
-
-# put google SDK in python path
-#export PYTHONPATH=$SDKROOT/platform/bq:$PYTHONPATH
-
 
 ZSH_THEME="simple"
 
@@ -87,7 +99,6 @@ alias cdg='cd-gitroot'
  
 bindkey '^R' history-incremental-pattern-search-backward
 
-# User configuration
 export PATH="/usr/local/mysql/bin:/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin"
 export LANG=en_US.UTF-8
 
@@ -103,6 +114,23 @@ if [[ -n $SSH_CONNECTION ]]; then
  export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 
-
 #function kill_port() { lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9 }
 #function kill_by_name() { lsof -i| grep $1| awk '{print $2}' | xargs kill -9 }
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/amy/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/amy/google-cloud-sdk/completion.zsh.inc'
+
+export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.5.1
+export AWS_ACCESS_KEY=<access key>
+export AWS_SECRET_KEY=<secret key>
+
+if [ -s ~/.bash_profile.khan ]; then
+	source ~/.bash_profile.khan
+fi
+
+export PATH=$PATH:$EC2_HOME/bin
+
+
